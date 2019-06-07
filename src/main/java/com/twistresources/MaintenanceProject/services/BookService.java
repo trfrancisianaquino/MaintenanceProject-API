@@ -34,17 +34,6 @@ public class BookService {
         }throw new NullPointerException("trying to update a non-existing data at id " + id);
     }
 
-//    public Book updateBook(Book book) {
-//        bookRepository.findById(book.getId())
-//                .orElseThrow(() -> new NullPointerException("Todo not found with id " + todoResource.getId()));
-//
-//        book.setDescription(todoResource.getDescription());
-//        todo.setCompleted(todoResource.isCompleted());
-//
-//        todoRepository.save(todo);
-//        return book;
-//    }
-
     public Boolean deleteBook(Long id){
         if(bookRepository.existsById(id)){
             bookRepository.deleteById(id);

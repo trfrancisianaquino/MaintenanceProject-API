@@ -10,8 +10,6 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.hibernate.annotations.Where;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
 
 import javax.persistence.*;
 import javax.validation.Valid;
@@ -25,7 +23,6 @@ import java.util.Date;
 @Table(name="books")
 @JsonPropertyOrder(value = {"id", "title", "author", "publisher", "genre"})
 @JsonIgnoreProperties(value = {"modified_date", "added_date", "is_deleted", "hibernateLazyInitializer", "handler"})
-//@JsonIgnoreProperties(value = {"modified_date", "added_date", "is_deleted"})
 @SQLDelete(sql =
         "UPDATE books " +
                 "SET is_deleted = true " +
@@ -36,10 +33,6 @@ public class Book {
     @Id
     @GeneratedValue
     private Long id;
-
-//    @Embedded
-//    @Valid
-//    private Details details;
 
     @Valid
     @NotBlank(message = "title is required")
