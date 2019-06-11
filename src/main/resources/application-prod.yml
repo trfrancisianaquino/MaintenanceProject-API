@@ -1,17 +1,3 @@
-#spring:
-#
-#  jpa:
-#    database: POSTGRESQL
-#    show-sql: true
-#    driverClassName: org.postgresql.Driver
-#    hibernate:
-#      ddl-auto: update
-#
-#  datasource:
-#    url: jdbc:postgresql://localhost:5432/yourDatabaseName
-#    username: postgres
-#    password:
-
 spring:
   profiles:
     active: prod
